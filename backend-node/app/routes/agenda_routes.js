@@ -31,7 +31,14 @@ module.exports = function(app, pool) {
 
       client.query('select * from agenda', [], (err, item) => {
         release();
-        execute(err, res);
+
+        if (err) {
+          res.status(500).json(err);
+          return console.error('Erro executanto a consulta', err.stack);
+        } else {
+          res.status(200).json(item.rows);
+          return console.log(item.rowCount + ' registros retornados.');
+        }
       });
     });
   });
@@ -44,7 +51,14 @@ module.exports = function(app, pool) {
 
       client.query('select * from agenda where idagenda = $1', [idAgenda], (err, item) => {
         release();
-        execute(err, res);
+
+        if (err) {
+          res.status(500).json(err);
+          return console.error('Erro executanto a consulta', err.stack);
+        } else {
+          res.status(200).json(item.rows);
+          return console.log(item.rowCount + ' registros retornados.');
+        }
       });
     });
   });

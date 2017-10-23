@@ -1,0 +1,64 @@
+<agenda-header></agenda-header>
+<h1>Adicionar</h1>
+
+<div class="col-sm-4 col-xs-12">
+  <agenda-input errorMessage="Campo obrigatório com no mínimo 2 caracteres" label="">
+    <input class="form-control" name="contato" ngModel required minlength="2" maxlength="255" placeholder="Contato" autocomplete="off">
+  </agenda-input>
+</div><br>
+
+<div class="col-sm-4 col-xs-12">
+  <agenda-input errorMessage="Campo obrigatório com no mínimo 2 caracteres" label="">
+    <input class="form-control" name="nome" ngModel required minlength="2" maxlength="255" placeholder="Nome" autocomplete="off">
+  </agenda-input>
+</div><br>
+
+<div class="col-sm-4 col-xs-12">
+  <agenda-input errorMessage="Campo obrigatório com no mínimo 8 caracteres" label="">
+    <input class="form-control" name="telefoneFixo" ngModel required minlength="8" maxlength="100" placeholder="Telefone fixo" autocomplete="off">
+  </agenda-input>
+</div><br>
+
+<div class="col-sm-4 col-xs-12">
+  <agenda-input errorMessage="Campo obrigatório com no mínimo 2 caracteres" label="">
+    <input class="form-control" name="endereco" ngModel required minlength="2" maxlength="255" placeholder="Endereço" autocomplete="off">
+  </agenda-input>
+</div><br>
+
+<div class="col-sm-4 col-xs-12">
+  <agenda-input errorMessage="Campo obrigatório com no mínimo 2 caracteres" label="">
+    <input class="form-control" name="email" ngModel required minlength="2" maxlength="255" placeholder="E-mail" autocomplete="off">
+  </agenda-input>
+</div><br>
+
+<div class="col-sm-4 col-xs-12">
+  <agenda-input errorMessage="Campo obrigatório com no mínimo 8 caracteres" label="">
+    <input class="form-control" name="celular" ngModel required minlength="2" maxlength="100" placeholder="Celular" autocomplete="off">
+  </agenda-input>
+</div><br>
+
+<p>Adicionando {{nome}}!</p>
+
+<button (click)="salvarAgenda()">Salvar</button>
+
+<h1>Lista</h1>
+
+<table>
+  <tr *ngFor="let agenda of lista">
+    <td>
+      {{agenda.idAgenda}}
+    </td>
+    <td>
+      {{agenda.nome}}
+    </td>
+    <td>
+      <button (click)="apagarAgenda(agenda.idAgenda)">Apagar</button>
+    </td>
+  </tr>
+</table>
+
+
+<h1>Json</h1>
+<pre>
+  {{lista | json}}
+</pre>
