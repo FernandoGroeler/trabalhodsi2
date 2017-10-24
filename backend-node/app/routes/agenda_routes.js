@@ -44,12 +44,12 @@ module.exports = function(app, pool) {
   });
 
   app.get('/api/agenda/:id', (req, res) => {
-    let idAgenda = req.params.idAgenda;
+    let id = req.params.id;
 
     pool.connect((err, client, release) => {
       connectionError(err, res);
 
-      client.query('select * from agenda where idagenda = $1', [idAgenda], (err, item) => {
+      client.query('select * from agenda where id = $1', [id], (err, item) => {
         release();
 
         if (err) {
@@ -64,12 +64,12 @@ module.exports = function(app, pool) {
   });
 
   app.delete('/api/agenda/:id', (req, res) => {
-    let idAgenda = req.params.id;
+    let id = req.params.id;
 
     pool.connect((err, client, release) => {
       connectionError(err, res);
 
-      client.query('delete from agenda where idagenda = $1', [idAgenda], (err, item) => {
+      client.query('delete from agenda where id = $1', [id], (err, item) => {
         release();
         execute(err, res);
       });
@@ -77,7 +77,7 @@ module.exports = function(app, pool) {
   });
 
   app.put('/api/agenda/:id', (req, res) => {
-    let idAgenda = req.params.id;
+    let id = req.params.id;
 
     let contato = req.body.contato;
     let nome = req.body.nome;
@@ -96,14 +96,14 @@ module.exports = function(app, pool) {
                    '       endereco = $4,     ' +
                    '       email = $5,        ' +
                    '       celular = $6       ' +
-                   ' where idagenda = $7      ',
+                   ' where id = $7      ',
                    [contato,
                     nome,
                     telefoneFixo,
                     endereco,
                     email,
                     celular,
-                    idAgenda], (err, item) => {
+                    id], (err, item) => {
         release();
         execute(err, res);
       });

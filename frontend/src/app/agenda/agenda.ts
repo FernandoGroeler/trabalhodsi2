@@ -1,6 +1,6 @@
 export class Agenda {
   constructor(
-    public idAgenda?: number,
+    public id?: number,
     public contato?: string,
     public nome?: string,
     public telefoneFixo?: string,
