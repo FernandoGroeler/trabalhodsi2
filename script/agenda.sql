@@ -1,9 +1,17 @@
-CREATE TABLE agenda (
-	id SERIAL PRIMARY KEY,
-	contato VARCHAR(255),
-    nome VARCHAR(255),
-	telefonefixo VARCHAR(100),
-	endereco VARCHAR(255),
-	email VARCHAR(255),
-    celular VARCHAR(100)
+CREATE TABLE public.agenda
+(
+    id serial NOT NULL,
+    contato character varying(255),
+    nome character varying(255),
+    telefonefixo character varying(100),
+    endereco character varying(255),
+    email character varying(255),
+    celular character varying(100),
+    PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
 );
+
+ALTER TABLE public.agenda
+    OWNER to postgres;
