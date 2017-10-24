@@ -11,7 +11,7 @@ export class AgendaComponent implements OnInit {
   public lista: Agenda[] = [];
   public contato = '';
   public nome = '';
-  public telefoneFixo = '';
+  public telefonefixo = '';
   public endereco = '';
   public email = '';
   public celular = '';
@@ -29,7 +29,7 @@ export class AgendaComponent implements OnInit {
       this.atualizar = false;
       this.agendaAtualizar.contato = this.contato;
       this.agendaAtualizar.nome = this.nome;
-      this.agendaAtualizar.telefoneFixo = this.telefoneFixo;
+      this.agendaAtualizar.telefonefixo = this.telefonefixo;
       this.agendaAtualizar.endereco = this.endereco;
       this.agendaAtualizar.email = this.email;
       this.agendaAtualizar.celular = this.celular;
@@ -47,7 +47,7 @@ export class AgendaComponent implements OnInit {
 
       agenda.contato = this.contato;
       agenda.nome = this.nome;
-      agenda.telefoneFixo = this.telefoneFixo;
+      agenda.telefonefixo = this.telefonefixo;
       agenda.endereco = this.endereco;
       agenda.email = this.email;
       agenda.celular = this.celular;
@@ -100,7 +100,7 @@ export class AgendaComponent implements OnInit {
 
     this.contato = agenda.contato;
     this.nome = agenda.nome;
-    this.telefoneFixo = agenda.telefoneFixo;
+    this.telefonefixo = agenda.telefonefixo;
     this.endereco = agenda.endereco;
     this.email = agenda.email;
     this.celular = agenda.celular;

@@ -3,7 +3,7 @@ module.exports = function(app, pool) {
     pool.connect((err, client, release) => {
       let contato = req.body.contato;
       let nome = req.body.nome;
-      let telefoneFixo = req.body.telefoneFixo;
+      let telefonefixo = req.body.telefonefixo;
       let endereco = req.body.endereco;
       let email = req.body.email;
       let celular = req.body.celular;
@@ -17,7 +17,7 @@ module.exports = function(app, pool) {
                    '                   email,          ' +
                    '                   celular)        ' +
                    '     values($1, $2, $3, $4, $5, $6)',
-                   [contato, nome, telefoneFixo, endereco, email, celular],
+                   [contato, nome, telefonefixo, endereco, email, celular],
                    (err, item) => {
                      release();
                      execute(err, res);
@@ -81,7 +81,7 @@ module.exports = function(app, pool) {
 
     let contato = req.body.contato;
     let nome = req.body.nome;
-    let telefoneFixo = req.body.telefoneFixo;
+    let telefonefixo = req.body.telefonefixo;
     let endereco = req.body.endereco;
     let email = req.body.email;
     let celular = req.body.celular;
@@ -99,7 +99,7 @@ module.exports = function(app, pool) {
                    ' where id = $7      ',
                    [contato,
                     nome,
-                    telefoneFixo,
+                    telefonefixo,
                     endereco,
                     email,
                     celular,
