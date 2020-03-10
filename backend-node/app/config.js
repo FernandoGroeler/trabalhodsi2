@@ -4,7 +4,7 @@ let config = {
     port: 5432,
     db: 'agenda',
     user: 'postgres',
-    password: 'pr4gr1m1d4r'
+    password: '123456'
   },
   server: {
     port: '8000'
